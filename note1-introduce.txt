@@ -1,0 +1,40 @@
+安装完成后，还需要最后一步设置，在命令行输入：
+
+$ git config --global user.name "Your Name"
+$ git config --global user.email "email@example.com"
+
+注意git config命令的--global参数，用了这个参数，表示你这台机器上所有的Git仓库都会使用这个配置，当然也可以对某个仓库指定不同的用户名和Email地址。
+
+mkdir dirName 创建目录
+cd dirName 打开目录
+
+初始化 当前目录为git仓库
+git init
+//通过git init命令把这个目录变成Git可以管理的仓库：
+pwd命令用于显示当前目录。 
+
+第一步，用命令git add告诉Git，把文件添加到仓库：
+
+$ git add readme.txt
+
+
+第二步，用命令git commit告诉Git，把文件提交到仓库：
+
+$ git commit -m "wrote a readme file"
+
+简单解释一下git commit命令，-m后面输入的是本次提交的说明，可以输入任意内容，当然最好是有意义的，这样你就能从历史记录里方便地找到改动记录。
+
+因为commit可以一次提交很多文件，所以你可以多次add不同的文件，比如：
+
+$ git add file1.txt
+$ git add file2.txt file3.txt
+$ git commit -m "add 3 files."
+
+初始化一个Git仓库，使用git init命令。
+
+添加文件到Git仓库，分两步：
+
+第一步，使用命令git add <file>，注意，可反复多次使用，添加多个文件；
+
+第二步，使用命令git commit，完成。
+
