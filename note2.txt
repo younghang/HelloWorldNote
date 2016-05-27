@@ -55,4 +55,21 @@ HEAD指向的版本就是当前版本，因此，Git允许我们在版本的历�
 
 你可以简单理解为，需要提交的文件修改通通放到暂存区，然后，一次性提交暂存区的所有修改。
 
-it非常清楚地告诉我们，readme.txt被修改了，而LICENSE还从来没有被添加过，所以它的状态是Untracked。
+git非常清楚地告诉我们，readme.txt被修改了，而LICENSE还从来没有被添加过，所以它的状态是Untracked。
+
+
+
+提交后，用git diff HEAD -- readme.txt命令可以查看工作区和版本库里面最新版本的区别：
+
+$ git diff HEAD -- readme.txt 
+diff --git a/readme.txt b/readme.txt
+
+那怎么提交第二次修改呢？你可以继续git add再git commit，也可以别着急提交第一次修改，先git add第二次修改，再git commit，就相当于把两次修改合并后一块提交了：
+
+第一次修改 -> git add -> 第二次修改 -> git add -> git commit
+
+好，现在，把第二次修改提交了，然后开始小结。
+
+小结
+
+现在，你又理解了Git是如何跟踪修改的，每次修改，如果不add到暂存区，那就不会加入到commit中。
