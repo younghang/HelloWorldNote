@@ -5,7 +5,7 @@ protected void onCreate(Bundle savedInstanceState) {
             window.setFlags(
                     WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS,
                     WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-                    this is a new versioin
+                    this is not a new versioin
         }
         setContentView(R.layout.activity_setting);
         toolbar = (Toolbar) findViewById(R.id.mytoolbar);
