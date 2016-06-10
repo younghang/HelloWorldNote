@@ -1,0 +1,23 @@
+流式布局自定义view.txt
+
+自定义ViewGroup
+	1.onMeasure:测量子view的宽和高，设置自己的宽和高
+	2.onLayout:设置view的位置
+
+onMeasure:根据子view的布局文件，为子view设置测量模式和测量值
+
+测量=测量模式+测量值
+
+测量模式：三种
+1.EXACTLY：100dp match_parent 
+2.AT_MOST:wrap_content
+3.UNSPECIFIED:子控件想要多大就多大
+
+ViewGroup对应一个LayoutParams
+
+子Viewl.getLayoutParams()->父控件的LayoutParams
+
+ViewGroup的构造函数
+一般在创建实例的时候，会调用一个参数的构造方法
+设置属性的时候会调用两个参数的构造方法。
+有自定义属性的时候会调用三个参数的构造方法
