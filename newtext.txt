@@ -1,2 +1,11 @@
-123456
-this is the second branch need to be merge
+protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        Window window = getWindow();
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            window.setFlags(
+                    WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS,
+                    WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+        }
+        setContentView(R.layout.activity_setting);
+        toolbar = (Toolbar) findViewById(R.id.mytoolbar);
+        toolbar.setTitle("GaiaNotify");
