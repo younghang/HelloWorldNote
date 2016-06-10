@@ -7,6 +7,6 @@ protected void onCreate(Bundle savedInstanceState) {
                     WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
                     this is not a new versioin
         }
-        setView(R.drawable.activity_setting);
+        setView(R.drawable.activity_setting);quit good
         toolbar = (Toolbar) findViewById(R.id.mytoolbar);
         toolbar.setTitle("GaiaNotify");
