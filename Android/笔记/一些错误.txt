@@ -1,0 +1,12 @@
+
+1.安卓文件目录必须一级一级的创建，不能一次创建两级及以上目录，不然不会创建并报错
+
+2.安卓程序退出不能用System.exit(0) 不然不会执行onDestroy方法(Activity 或者 Fragment的)
+	先是Activity 再是 Fragment  退出用finish()
+
+3.安卓用Thread的话， t.run方法还是在主线程中执行，t.start() 方法才是在子线程中执行 
+	正确的调用姿势是t.start()
+
+4.在RemoteView的PendingIntent 的Intent中添加任何参数进去都是拿不出来的(intent 里面都是拿不出来的)。
+
+	

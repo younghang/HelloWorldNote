@@ -1,0 +1,19 @@
+使用系统浏览器打开一个网址：
+Uri uri=Uri.parse(url);
+Intent intent=new Intent(Intent.ACTION_VIEW,uri);
+startActivity(intent);
+
+
+mwebview.loadUrl("www.baidu.com");
+mwebview.setWebViewClient(new WebViewClient)()
+{
+	public boolean shouldOverrideUrlLoading(WebView view ,String url)
+	{
+	view.loadUrl(url);
+	return super.shouldOverrideUrlLoading(view,url);
+
+	}
+	onReciver失败的方法回调
+});
+
+mwebview.setDownloadListener(new )

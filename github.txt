@@ -1,0 +1,31 @@
+一般协作流程是：
+	新建一个分支，然后进行添加版本commit，实现功能。发pull request
+	进行修改，讨论，最后合并 并删除分支。
+http://www.imooc.com/video/7633
+
+Markdown标记语言
+回复中自动语法高亮
+添加
+```js
+alert()
+```
+#h1 一级标题
+*first 有序列表
+*
+*
+还可以@xxx
+
+:表情
+
+>xxxxx回复前文 或者选中按R
+或者点击时间复制导航条中的链接也是可以的
+
+Issues事务卡片：
+发建议，讨论
+
+
+利用github搭建网站：
+https://pages.github.com
+在项目下建立一个gh-pages分支
+
+github用户名.github.io/项目名

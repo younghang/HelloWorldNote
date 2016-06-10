@@ -1,0 +1,20 @@
+编辑中有快捷键
+
+Ctrl+Shift+P 可以选择提示的语法类型
+Ctrl+P 就可以快速的找文件，或者@或者#定位某个位置
+
+Ctrl+H 打开替换窗口
+
+选中某些文字之后，重复按Ctrl+D 使用多行游标
+					Ctr+K跳过某些部分
+
+或者按住Ctrl，然后鼠标单击也能产生多行游标
+Ctrl+Shift+D复制行,
+ ALT+F3 进行多选。
+
+ Ctrl+{缩进
+ Ctrl+Shift+Enter 在光标上一行插入一行
+
+ Ctrl+Shift+V :在粘贴的同时保持了缩进格式
+
+ PakageControl 网站
