@@ -1,0 +1,47 @@
+支持4.4以上版本：
+应该是获得，最外层的color，赋值到statusbar上
+外层属性：或者是Action or Toolbar 设置以下属性
+ android:fitsSystemWindows="true" ，目的为状态栏预留空间
+
+设置toolbar 在加载布局文件之后
+ 		setContentView(R.layout.activity_main);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+
+在加载布局文件之前：代码的形式设置status bar为透明
+ 		Window window=getWindow();
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            window.setFlags(
+                    WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS,
+                    WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+        }
+
+加载toolbar:
+	1.设置Theme：
+		<resources>
+		    <style name="theme2" parent="Theme.AppCompat.NoActionBar" ><!-->AppCompat youyong<!-->
+
+			    <item name="android:windowNoTitle">true</item><!-->meiyouyong<!-->
+			    <item name="android:windowActionBar">false</item>
+			    
+			    <item name="android:colorBackground">#0bd0f7</item><!-->meiyouyong<!-->
+			    <item name="android:textColor">#000000</item>
+			    <item name="colorPrimary">#0bd0f7</item>
+			        <!--<item name="android:background">@color/mycolor</item>-->
+			    <item name="colorPrimaryDark">#0bd0f7</item>
+			    <item name="colorAccent">#0bd0f7</item>
+		    </style>
+		</resources>
+	2.加载Theme：
+	  <activity android:name=".MainActivity"
+            android:theme="@style/theme2">
+
+    3.加载toolbar
+获取系统自带图片：
+myMenuItem.setIcon(android.R.drawable.ic_menu_save);
+在*.XML文件中的<resource>可以进行如下引用：
+android:icon="@android:drawable/ic_menu_save"
+
+样子：http://blog.csdn.net/jishu360/article/details/8540026
+

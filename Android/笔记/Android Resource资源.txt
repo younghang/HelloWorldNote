@@ -1,0 +1,177 @@
+res/drawable/ 
+	<shape>标签
+		corners ----------圆角
+			圆角矩形：
+			<shape xmlns:android="http://schemas.android.com/apk/res/android" >
+		    <solid android:color="#fff"/>
+		    <padding android:top="10px" android:bottom="10px"/>
+		    <corners android:radius="16px"/>
+		    <stroke android:width="1px" android:color="#000"/>
+			</shape>
+
+		gradient ----------渐变
+
+			<View 
+			    android:layout_width="match_parent"
+			    android:layout_height="50dp"
+			    android:layout_marginTop="10dp"
+			    android:background="@drawable/gra_shape"
+			    />
+			    <shape xmlns:android="http://schemas.android.com/apk/res/android" >
+				    <gradient
+				        android:angle="270.0"
+				        android:endColor="#ffffff"
+				        android:startColor="#000000" />
+				</shape>
+
+		padding ----------内容离边界距离
+		size　------------大小　
+		solid 　----------填充颜色
+		stroke ----------描边
+			shape制作虚线
+			<View 
+		    android:layout_width="match_parent"
+		    android:layout_height="5px"
+		    android:layout_marginTop="10dp"
+		    android:background="@drawable/line_shape"
+		    />
+		    <shape xmlns:android="http://schemas.android.com/apk/res/android"
+		    android:shape="line" >
+			    <stroke
+			        android:dashGap="3dp"
+			        android:dashWidth="8dp"
+			        android:width="1dp"
+			        android:color="#63a219" />
+			    <size android:height="1dp" />
+			</shape>
+
+		注意的是corners的属性bottomLeftRadius为右下角、bottomRightRadius为左下角
+ 	
+ 	<selector>标签
+ 		selector根据不同的选定状态来定义不同的现实效果
+
+		常用属性：
+
+		android:state_selected--------选中
+		android:state_focused--------获得焦点
+		android:state_pressed--------点击
+		android:state_enabled--------设置是否响应事件
+
+		============================
+
+		android:drawable 放一个drawable资源
+		android:state_pressed 是否按下，如一个按钮触摸或者点击。
+		android:state_focused 是否取得焦点，比如用户选择了一个文本框。
+		android:state_hovered 光标是否悬停，通常与focused state相同，它是4.0的新特性
+		android:state_selected 被选中，它与focus state并不完全一样，如一个list view 被选中的时候，它里面的各个子组件可能通过方向键，被选中了。
+		android:state_checkable 组件是否能被check。如：RadioButton是可以被check的。
+		android:state_checked 被checked了，如：一个RadioButton可以被check了。
+		android:state_enabled 能够接受触摸或者点击事件
+		android:state_activated 被激活(这个麻烦举个例子，不是特明白)
+		android:state_window_focused 应用程序是否在前台，当有通知栏被拉下来或者一个对话框弹出的时候应用程序就不在前台了
+
+		有的需要加android:focusable和android:clickable为true才能获取焦点
+
+		按钮：
+
+					<Button 
+					    android:layout_width="160dp"
+					    android:layout_height="wrap_content"
+					    android:background="@drawable/button_select"
+					    android:text="点我变色"
+					    />
+					button_select.xml
+
+						<selector xmlns:android="http://schemas.android.com/apk/res/android"> 
+						    <item android:state_pressed="true" android:drawable="@drawable/play_button"></item>
+						    <item android:state_focused="true" android:drawable="@drawable/play_button"></item>
+						    <item android:drawable="@drawable/button"></item>
+						</selector>  
+					button.xml默认效果
+
+						<?xml version="1.0" encoding="utf-8"?>
+						<shape xmlns:android="http://schemas.android.com/apk/res/android" >
+						    <solid android:color="#E53B36"/>
+						</shape>
+					play_button.xml点击效果
+
+						<?xml version="1.0" encoding="utf-8"?>
+						<shape xmlns:android="http://schemas.android.com/apk/res/android" >
+						    <solid android:color="#E8B714"/>
+						</shape>
+
+		常用checkbox设置：
+
+			<?xml version="1.0" encoding="UTF-8"?>
+			<selector
+			  xmlns:android="http://schemas.android.com/apk/res/android">
+			    <item android:state_window_focused="false" android:state_enabled="true" android:state_checked="true" android:drawable="@drawable/btn_check_on" />
+			    <item android:state_window_focused="false" android:state_enabled="true" android:state_checked="false" android:drawable="@drawable/btn_check_off" />
+			    <item android:state_enabled="true" android:state_checked="true" android:state_pressed="true" android:drawable="@drawable/btn_check_on_pressed" />
+			    <item android:state_enabled="true" android:state_checked="false" android:state_pressed="true" android:drawable="@drawable/btn_check_off_pressed" />
+			    <item android:state_focused="true" android:state_enabled="true" android:state_checked="true" android:drawable="@drawable/btn_check_on_selected" />
+			    <item android:state_focused="true" android:state_enabled="true" android:state_checked="false" android:drawable="@drawable/btn_check_off_selected" />
+			    <item android:state_enabled="true" android:state_checked="false" android:drawable="@drawable/btn_check_off" />
+			    <item android:state_enabled="true" android:state_checked="true" android:drawable="@drawable/btn_check_on" />
+			</selector>
+
+		常用ImageButton设置：
+
+			<?xml version="1.0" encoding="UTF-8"?>
+			<selector
+			  xmlns:android="http://schemas.android.com/apk/res/android">
+			    <item android:state_pressed="true" android:drawable="@drawable/button2_down" />
+			    <item android:state_focused="true" android:state_enabled="true" android:drawable="@drawable/button2_over" />
+			    <item android:state_enabled="true" android:drawable="@drawable/button2" />
+			</selector>
+		 
+		常用Button设置：
+
+		 
+			<?xml version="1.0" encoding="UTF-8"?>
+			<selector
+			  xmlns:android="http://schemas.android.com/apk/res/android">
+			    <item android:state_enabled="false" android:drawable="@drawable/login_input" />
+			    <item android:state_pressed="true" android:drawable="@drawable/login_input" />
+			    <item android:state_focused="true" android:drawable="@drawable/input_over" />
+			</selector>		 
+		 
+
+		设置TextView
+
+			<?xml version="1.0" encoding="utf-8"?>
+			<selector xmlns:android="http://schemas.android.com/apk/res/android" >
+			   <item android:color="@color/gray" android:state_pressed="false" android:state_enabled="true"/>
+			    <item android:color="@color/white" android:state_pressed="true" android:state_enabled="true"/>
+			    <item android:color="@color/gray" android:state_enabled="false"/></selector>
+
+    <layer-list>可以将多个图片按照顺序层叠起来，让其看起来像一个图一样。 
+	
+		用法：
+
+		在在drawable下建立一个xml文件，faceleft.xml
+
+		<?xml version="1.0" encoding="utf-8"?>
+		<layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
+		  <item android:drawable="@drawable/a"></item><!--图1-->
+		 <item android:drawable="@drawable/b"></item><!--图2-->
+		</layer-list>
+		引用：
+
+		 <ImageView
+		  android:layout_width="wrap_content"
+		  android:layout_height="wrap_content"
+		  android:background="@drawable/faceleft" />
+
+
+res/layout/ 存放布局文件
+
+五大布局
+
+res/values/ 存放变量、参数，如:
+
+styles.xml----------存放样式
+
+strings.xml---------存放静态值
+
+colors.xml----------存放颜色

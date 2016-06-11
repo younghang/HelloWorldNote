@@ -1,0 +1,11 @@
+public View getView(int position, View convertView, ViewGroup parent) {
+View view = null;
+if (convertView != null) {
+view = convertView;
+//复用了回收的view 只需要直接作内容填充的修改就好了
+} else {
+view = new Xxx(...);
+//没有供复用的view 按一般的做法新建view
+}
+return view;
+}

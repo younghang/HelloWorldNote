@@ -1,0 +1,13 @@
+
+
+
+<!--自定义 navigation drarwer 的样式-->  
+    <style name="AppTheme.MyDrawerArrowStyle" parent="Widget.AppCompat.DrawerArrowToggle">  
+        <item name="spinBars">false</item>  
+        <item name="color">#FFFFFF</item>  
+    </style>  
+</resources>  
+ 
+其中：
+spinBars  旋转效果      默认值为 true，有旋转效果 ；false则无旋转效果。
+color navigation icon 的顏色

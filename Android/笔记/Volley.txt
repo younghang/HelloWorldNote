@@ -1,0 +1,46 @@
+Volley简单二次封装：
+
+定义请求类：
+VolleyRequest
+定义成员方法：
+static void RequestGet(Context mcontext,String url,String tag,VollaeyMethodManage vmm )
+static void RequestPost(Context mcontext,String url,String tag,Map<String,String>,VollaeyMethodManage vmm)
+
+创建成员对象：
+static StringRequest request；请求对象
+static Context context；上下文对象
+
+RequestGet(xxx){
+MyApplication.getHttpQueues().cancleAll(tag);//取消请求 避免重复
+request=new StringRequest(Method.GET,url,vmm.loadListener,vm.errLs)
+request.setTag(tag)
+MyApplication.getHttpQueues().add(requeset);
+}
+
+---------------------------------------------
+创建[抽象]类，管理两个方法：
+[abstract] class VolleyMethodManage;
+
+创建成员：
+Context mcontext;
+Listener<String>mlistener,成功响应
+ErrorListener merrorlistener失败响应
+
+
+定义成员方法：
+提供外部方法接入：
+public abstract void onMySuccess(String result)
+public abstract void onMyError(VollyError error)
+封装成功调用：
+Listener<String> loadListener()
+{
+mlistener=new Listener<String>
+{
+@override
+void onResponse(String arg0)
+{
+onMySuccess(arg0)
+}
+};
+return mListener;
+}
